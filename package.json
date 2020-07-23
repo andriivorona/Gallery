@@ -3,6 +3,7 @@
 	"version": "4.0.0",
 	"description": "some gallery for view adaptive",
 	"main": "index.js",
+	"homepage": "https://andriivorona.github.io/Gallery/",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -16,6 +17,7 @@
 		"gulp-autoprefixer": "^7.0.1",
 		"gulp-clean-css": "^4.3.0",
 		"gulp-concat": "^2.6.1",
+		"gulp-gh-pages": "^0.5.4",
 		"gulp-image-resize": "^0.13.1",
 		"gulp-imagemin": "^7.1.0",
 		"gulp-notify": "^3.2.0",

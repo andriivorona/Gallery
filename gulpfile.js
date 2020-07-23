@@ -82,7 +82,7 @@ gulp.task('rsync', function() {
 	return gulp.src('app/**')
 	.pipe(rsync({
 		root: 'app/',
-		hostname: 'username@yousite.com',
+		hostname: 'https://andriivorona.github.io/Gallery/',
 		destination: 'yousite/public_html/',
 		// include: ['*.htaccess'], // Includes files to deploy
 		exclude: ['**/Thumbs.db', '**/*.DS_Store'], // Excludes files from deploy
@@ -112,10 +112,9 @@ if (gulpVersion == 3) {
 
 };
 
-// If Gulp Version 4
 if (gulpVersion == 4) {
 
-	// Img Processing Task for Gulp 4
+	
 	gulp.task('img', gulp.parallel('img1x', 'img2x'));
 
 	gulp.task('watch', function() {
