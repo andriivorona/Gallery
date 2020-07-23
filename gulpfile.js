@@ -15,6 +15,9 @@ var gulp          = require('gulp'),
 		imageResize   = require('gulp-image-resize'),
 		imagemin      = require('gulp-imagemin'),
 		del           = require('del');
+		gulp = require('gulp');
+	  ghPages = require('gulp-gh-pages');
+
 
 // Local Server
 gulp.task('browser-sync', function() {
@@ -78,20 +81,25 @@ gulp.task('code', function() {
 });
 
 // Deploy
-gulp.task('rsync', function() {
-	return gulp.src('app/**')
-	.pipe(rsync({
-		root: 'app/',
-		hostname: 'https://andriivorona.github.io/Gallery/',
-		destination: 'yousite/public_html/',
-		// include: ['*.htaccess'], // Includes files to deploy
-		exclude: ['**/Thumbs.db', '**/*.DS_Store'], // Excludes files from deploy
-		recursive: true,
-		archive: true,
-		silent: false,
-		compress: true
-	}))
-});
+// gulp.task('rsync', function() {
+// 	return gulp.src('app/**')
+// 	.pipe(rsync({
+// 		root: 'app/',
+// 		hostname: 'https://andriivorona.github.io/Gallery/',
+// 		destination: 'yousite/public_html/',
+// 		// include: ['*.htaccess'], // Includes files to deploy
+// 		exclude: ['**/Thumbs.db', '**/*.DS_Store'], // Excludes files from deploy
+// 		recursive: true,
+// 		archive: true,
+// 		silent: false,
+// 		compress: true
+// 	}))
+// });
+
+gulp.task('deploy', function() {
+	return gulp.src('./app/**/*')
+		.pipe(ghPages());
+})
 
 // If Gulp Version 3
 if (gulpVersion == 3) {
